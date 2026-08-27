@@ -1,3 +1,4 @@
+# E-commerce-Application
 # NexusGaming - Full-Stack Gaming E-Commerce Platform
 
 > **A production-grade, full-stack gaming e-commerce application** built with React, Node.js/Express, Prisma ORM, and SQLite. Features a dark cyberpunk UI, JWT authentication, cart/wishlist/checkout workflows, admin dashboard, Stripe-compatible payment architecture, reviews, and comprehensive automated test suites.
