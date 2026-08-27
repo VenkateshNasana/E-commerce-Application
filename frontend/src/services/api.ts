@@ -1,0 +1,28 @@
+import axios from 'axios';
+
+const API_BASE_URL = 'http://localhost:5000/api/v1';
+
+export const api = axios.create({
+  baseURL: API_BASE_URL,
+  headers: {
+    'Content-Type': 'application/json',
+  },
+});
+
+// Interceptor to inject JWT token
+api.interceptors.request.use((config) => {
+  const token = localStorage.getItem('nexus_token');
+  if (token) {
+    config.headers.Authorization = `Bearer ${token}`;
+  }
+  return config;
+});
+
+// Response Interceptor for Error Handling
+api.interceptors.response.use(
+  (response) => response,
+  (error) => {
+    const message = error.response?.data?.message || error.message || 'An unexpected error occurred';
+    return Promise.reject(new Error(message));
+  }
+);
