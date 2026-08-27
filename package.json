@@ -1,0 +1,30 @@
+{
+  "name": "nexusgaming-ecommerce",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Full-Stack Gaming E-Commerce Application",
+  "scripts": {
+    "setup": "npm run setup:backend && npm run setup:frontend",
+    "setup:backend": "cd backend && npm install",
+    "setup:frontend": "cd frontend && npm install",
+    "db:migrate": "cd backend && npx prisma db push",
+    "db:seed": "cd backend && npx tsx prisma/seed.ts",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd frontend && npm run dev",
+    "build": "cd backend && npm run build && cd ../frontend && npm run build",
+    "test": "cd backend && npm test",
+    "test:e2e": "cd backend && npm run test:e2e"
+  },
+  "keywords": [
+    "ecommerce",
+    "gaming",
+    "fullstack",
+    "react",
+    "express",
+    "prisma",
+    "typescript",
+    "tailwind"
+  ],
+  "author": "NexusGaming Engineering Team",
+  "license": "MIT"
+}
